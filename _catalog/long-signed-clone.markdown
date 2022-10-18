@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Duplicated Parameter Code
+title:  Long-Signed Clone
 category: jekyll
 ---
 
@@ -12,7 +12,7 @@ A method with many lines because one or more parameters require the application 
 
 ## Abstract Example
 
-The methods `ma()` and `mb()` have a duplicated code because the parameter `bo` is used equally many times and in both methods. This repetitive code related to the parameter `bo` is an example of a Duplicated Parameter Code.
+The methods `ma()` and `mb()` have a duplicated code because the parameter `bo` is used equally many times and in both methods. This repetitive code related to the parameter `bo` is an example of a Long-Signed Clone.
 
 ![Abstract Example]({{site.baseurl}}/assets/catalog/duplicated-parameter-code/smell-2-abstract.png){:style="display:block; margin-left:auto; margin-right:auto"}
 
@@ -26,7 +26,7 @@ This code smell degrades the reusability, coupling, size, and cohesion of the me
 
 ## Name and Description
 
-**Decompose Duplicated Parameter Code**: is the removal of duplicated code, decreasing the method size and increasing code cohesion. This composite refactoring is recommended to remove Duplicated Parameter Code.
+**Decompose Long-Signed Clone**: is the removal of duplicated code, decreasing the method size and increasing code cohesion. This composite refactoring is recommended to remove Long-Signed Clone.
 
 ## Motivation
 
@@ -38,7 +38,7 @@ The developer extracts the duplicated code to another method, applying **Extract
 
 ### Abstract Example
 
-This is example in which the developer decomposes the Duplicated Parameter Code presented above. The developer extracts the duplicated code to the method `mbo()`, returning `null` case the condition is not satisfied. The method `mbo()` is then called by the methods `ma()` and `mb()`. 
+This is example in which the developer decomposes the Long-Signed Clone presented above. The developer extracts the duplicated code to the method `mbo()`, returning `null` case the condition is not satisfied. The method `mbo()` is then called by the methods `ma()` and `mb()`. 
 
 ![Mechanics (1) - Abstract Example]({{site.baseurl}}/assets/catalog/duplicated-parameter-code/refactoring-smell2-mechanism1-abstract.png){:style="display:block; margin-left:auto; margin-right:auto"}
 
@@ -48,7 +48,7 @@ The developer identifies what parameter(s) are requiring many duplicated lines o
 
 ### Abstract Example
 
-This is an example in which the developer decomposes the Duplicated Parameter Code presented above. Firstly, the developer applies two Extract Methods from the method `ma()` and `mb()`. The repetitive code was separated to a new method, the mbo()# method. Secondly, the developer updates the parameter type in the methods `ma()` and `mb()` to a type that is not used several and repetitive times in these methods. This parameter is `ao` from the `A` type, thus, the developer changes the parameter type `B` to `A`. 
+This is an example in which the developer decomposes the Long-Signed Clone presented above. Firstly, the developer applies two Extract Methods from the method `ma()` and `mb()`. The repetitive code was separated to a new method, the mbo()# method. Secondly, the developer updates the parameter type in the methods `ma()` and `mb()` to a type that is not used several and repetitive times in these methods. This parameter is `ao` from the `A` type, thus, the developer changes the parameter type `B` to `A`. 
 
 ![Mechanics (2) - Abstract Example - Part 1]({{site.baseurl}}/assets/catalog/duplicated-parameter-code/refactoring-smell2-mechanism2-abstract-part1.png){:style="display:block; margin-left:auto; margin-right:auto"}
 
@@ -64,9 +64,9 @@ The methods `viewUser()` and `viewClient()` have duplicated code because both me
 
 ![Concrete Example]({{site.baseurl}}/assets/catalog/duplicated-parameter-code/smell-2-concrete.png){:style="display:block; margin-left:auto; margin-right:auto"}
 
-## Concrete Example - Refactoring (Decompose Duplicated Parameter Code)
+## Concrete Example - Refactoring (Decompose Long-Signed Clone)
 
-This is an example in which the developer decomposes the Duplicated Parameter Code presented above. Firstly, the developer extracts the repetitive code in which the parameter `path` is used. The duplicated code is separated into a new method, the method `getContent()`. This method has the unique responsibility of reading the content. Secondly, the developer updates the parameter type in the methods `viewUser()` and `viewClient()` to the type that is not used many repetitive times in these methods. This parameter has the type `Content`. The developer changes the parameter type `TFile` to `Content`, because the `content` parameter is not used several times in these methods.
+This is an example in which the developer decomposes the Long-Signed Clone presented above. Firstly, the developer extracts the repetitive code in which the parameter `path` is used. The duplicated code is separated into a new method, the method `getContent()`. This method has the unique responsibility of reading the content. Secondly, the developer updates the parameter type in the methods `viewUser()` and `viewClient()` to the type that is not used many repetitive times in these methods. This parameter has the type `Content`. The developer changes the parameter type `TFile` to `Content`, because the `content` parameter is not used several times in these methods.
 
 ![Refactoring - Concrete Example - Part 1]({{site.baseurl}}/assets/catalog/duplicated-parameter-code/refactoring-smell2-mechanism2-concrete-part1.png){:style="display:block; margin-left:auto; margin-right:auto"}
 
